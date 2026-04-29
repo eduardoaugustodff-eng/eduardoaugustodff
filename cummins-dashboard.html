@@ -368,6 +368,70 @@
             font-weight: 600;
             margin-left: 10px;
         }
+
+        /* Abas de Peças */
+        .parts-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 12px 20px;
+            color: var(--secondary-blue);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tab-btn:hover {
+            color: var(--accent-blue);
+            border-bottom-color: var(--accent-blue);
+        }
+
+        .tab-btn.active {
+            color: var(--accent-blue);
+            border-bottom-color: var(--accent-blue);
+        }
+
+        /* Status Badges */
+        .status-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .status-badge.success {
+            background: #d4f4dd;
+            color: #1b6b3d;
+        }
+
+        .status-badge.warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-badge.pending {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        /* Tabela de Peças */
+        .parts-table {
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
@@ -561,6 +625,333 @@
                     </tbody>
                 </table>
             </div>
+
+            <!-- Card: Catálogo de Peças - Pistões e Anéis (Full Width) -->
+            <div class="card full-width">
+                <h2 class="card-title">
+                    <span class="card-icon">🔩</span>
+                    Catálogo de Peças - Pistões e Anéis
+                </h2>
+                <div class="parts-tabs">
+                    <button class="tab-btn active" onclick="filterParts('pistons')">Pistões com Anel</button>
+                    <button class="tab-btn" onclick="filterParts('rings')">Anéis</button>
+                </div>
+                <table class="comparison-table parts-table" id="pistons">
+                    <thead>
+                        <tr>
+                            <th>Código da Peça</th>
+                            <th>Descrição</th>
+                            <th>Código OEM</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>PA 1819 / S 21100</strong></td>
+                            <td>Pistão com Anel</td>
+                            <td>3907163</td>
+                            <td><span class="status-badge success">Disponível</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>PA 2102 / S 21550</strong></td>
+                            <td>Pistão com Anel</td>
+                            <td>3921880</td>
+                            <td><span class="status-badge success">Disponível</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>PA 9075 / S 21190</strong></td>
+                            <td>Pistão com Anel</td>
+                            <td>3919041</td>
+                            <td><span class="status-badge success">Disponível</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>PA 9092 / S 21260</strong></td>
+                            <td>Pistão com Anel</td>
+                            <td>3926632</td>
+                            <td><span class="status-badge warning">Ver Adaptações</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>PA 2304 / S 21380</strong></td>
+                            <td>Pistão com Anel</td>
+                            <td>3928673</td>
+                            <td><span class="status-badge success">Disponível</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>PA 2306 / S 21600</strong></td>
+                            <td>Pistão com Anel</td>
+                            <td>3921884</td>
+                            <td><span class="status-badge success">Disponível</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="comparison-table parts-table" id="rings" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Código da Peça</th>
+                            <th>Descrição</th>
+                            <th>Cilindros</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>DC 7188 / A 21110</strong></td>
+                            <td>Anel Aspirado</td>
+                            <td>1 CIL</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DC 7187 / A 21100</strong></td>
+                            <td>Anel Turbo</td>
+                            <td>1 CIL</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Card: Catálogo de Peças - Componentes Internos (Full Width) -->
+            <div class="card full-width">
+                <h2 class="card-title">
+                    <span class="card-icon">⚙️</span>
+                    Catálogo de Peças - Componentes Internos
+                </h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descrição</th>
+                            <th>Aplicação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>C 21100</strong></td>
+                            <td>Camisa Motor</td>
+                            <td>Motor 4BT/4BTA/B3.9T</td>
+                        </tr>
+                        <tr>
+                            <td><strong>B 21424</strong></td>
+                            <td>Bronzina Biela</td>
+                            <td>Biela Interliça</td>
+                        </tr>
+                        <tr>
+                            <td><strong>B 21466</strong></td>
+                            <td>Bronzina Biela</td>
+                            <td>Biela Fraturada</td>
+                        </tr>
+                        <tr>
+                            <td><strong>M 21502</strong></td>
+                            <td>Bronzina Mancal</td>
+                            <td>Mancal Principal</td>
+                        </tr>
+                        <tr>
+                            <td><strong>G 21051</strong></td>
+                            <td>Bucha Biela</td>
+                            <td>Acoplamento Biela</td>
+                        </tr>
+                        <tr>
+                            <td><strong>H 21450</strong></td>
+                            <td>Bucha Comando</td>
+                            <td>Comando de Válvulas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>T 21135</strong></td>
+                            <td>Tucho Motor Ferro</td>
+                            <td>Comando de Ferro</td>
+                        </tr>
+                        <tr>
+                            <td><strong>T 21216</strong></td>
+                            <td>Tucho Motor Aço</td>
+                            <td>Comando de Aço</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Card: Catálogo de Peças - Válvulas e Guias (Full Width) -->
+            <div class="card full-width">
+                <h2 class="card-title">
+                    <span class="card-icon">🔼</span>
+                    Catálogo de Peças - Válvulas e Guias
+                </h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descrição</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>VA 0210151</strong></td>
+                            <td>Válvula Admissão</td>
+                            <td>Entrada de Ar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VE 0210150</strong></td>
+                            <td>Válvula Escape</td>
+                            <td>Saída de Gases</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GC 0210054</strong></td>
+                            <td>Guia Adm/Esc</td>
+                            <td>Parede Fina</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SA 0210108</strong></td>
+                            <td>Sede Admissão</td>
+                            <td>Assento Válvula Admissão</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SE 0210107</strong></td>
+                            <td>Sede Escape</td>
+                            <td>Assento Válvula Escape</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Card: Catálogo de Peças - Juntas e Retentor (Full Width) -->
+            <div class="card full-width">
+                <h2 class="card-title">
+                    <span class="card-icon">🔐</span>
+                    Catálogo de Peças - Juntas e Retentores
+                </h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descrição</th>
+                            <th>Observações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>79954</strong></td>
+                            <td>Junta Superior Motor</td>
+                            <td>Com Retentor e Haste de Válvulas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>80955</strong></td>
+                            <td>Junta Motor Completo</td>
+                            <td>Sem Retentor</td>
+                        </tr>
+                        <tr>
+                            <td><strong>80954</strong></td>
+                            <td>Junta Motor Completo</td>
+                            <td>Com Retentores, Sem Anéis de Camisa, Com Haste Válvulas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>82284</strong></td>
+                            <td>Junta Cabeçote</td>
+                            <td>Vedação do Cabeçote</td>
+                        </tr>
+                        <tr>
+                            <td><strong>05603 KIT</strong></td>
+                            <td>Kit Retentor Polia</td>
+                            <td>Com Pista + Dispositivo Montagem</td>
+                        </tr>
+                        <tr>
+                            <td><strong>05287 KIT</strong></td>
+                            <td>Kit Retentor Traseiro</td>
+                            <td>Traseira do Motor</td>
+                        </tr>
+                        <tr>
+                            <td><strong>05287 GRGH</strong></td>
+                            <td>Retentor Traseiro</td>
+                            <td>Unitário</td>
+                        </tr>
+                        <tr>
+                            <td><strong>09286 NOF</strong></td>
+                            <td>Retentor Haste Válvulas</td>
+                            <td>Sem Carcaça</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Card: Catálogo de Peças - Sistemas Complementares (Full Width) -->
+            <div class="card full-width">
+                <h2 class="card-title">
+                    <span class="card-icon">💧</span>
+                    Catálogo de Peças - Sistemas Complementares
+                </h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descrição</th>
+                            <th>Função</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>UB 731</strong></td>
+                            <td>Bomba Água</td>
+                            <td>Arrefecimento do Motor</td>
+                        </tr>
+                        <tr>
+                            <td><strong>10167</strong></td>
+                            <td>Bomba Óleo</td>
+                            <td>Lubrificação do Motor</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VT 342.83</strong></td>
+                            <td>Válvula Termostática</td>
+                            <td>Controle de Temperatura</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CO 611</strong></td>
+                            <td>Comando Válvulas Aço</td>
+                            <td>Acionamento de Válvulas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6206 2RSR</strong></td>
+                            <td>Rolamento Virabrequim</td>
+                            <td>Suporte do Virabrequim</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VB 220</strong></td>
+                            <td>Virabrequim</td>
+                            <td>Eixo Principal do Motor</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Card: Catálogo de Peças - Filtros (Full Width) -->
+            <div class="card full-width">
+                <h2 class="card-title">
+                    <span class="card-icon">🔽</span>
+                    Catálogo de Peças - Filtros
+                </h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descrição</th>
+                            <th>Observações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>0986B01010</strong></td>
+                            <td>Filtro Óleo</td>
+                            <td>Filtração do Sistema de Lubrificação</td>
+                        </tr>
+                        <tr>
+                            <td><strong>0986450728</strong></td>
+                            <td>Filtro Combustível</td>
+                            <td>Padrão</td>
+                        </tr>
+                        <tr>
+                            <td><strong>0986450732</strong></td>
+                            <td>Filtro Combustível</td>
+                            <td>Opcional</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <!-- Footer -->
@@ -586,6 +977,30 @@
                 logoImg.style.display = 'block';
                 logoText.style.display = 'none';
             }
+        }
+
+        // Função para filtrar tabelas de peças
+        function filterParts(partType) {
+            // Ocultar todas as tabelas
+            const tables = document.querySelectorAll('.parts-table');
+            tables.forEach(table => {
+                table.style.display = 'none';
+            });
+
+            // Remover classe active de todos os botões
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Mostrar tabela selecionada
+            const selectedTable = document.getElementById(partType);
+            if (selectedTable) {
+                selectedTable.style.display = 'table';
+            }
+
+            // Adicionar classe active ao botão clicado
+            event.target.classList.add('active');
         }
 
         // Exemplo de uso (descomente e passe a URL da logo):
