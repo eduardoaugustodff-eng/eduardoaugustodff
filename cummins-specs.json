@@ -1,0 +1,350 @@
+{
+  "engine_series": "CUMMINS SERIE C - 8.3L / 6CTAA / 6TCA / 6CT",
+  "cylinder_count": 6,
+  "displacement": "8.3L",
+  "motor_kits": [
+    {
+      "model": "P 2002",
+      "variants": [
+        {
+          "code": "K 9068 / K 21660",
+          "type": "KIT MOTOR",
+          "sleeve_size": "237.12 / 132.95",
+          "part_number": "3919564"
+        },
+        {
+          "code": "K 2002 / K 21630",
+          "type": "KIT MOTOR",
+          "sleeve_size": "237.12 / 130.95",
+          "part_numbers": ["3919564", "3919247"],
+          "compression_chamber": "67 mm"
+        },
+        {
+          "code": "K 9091 / K 21635",
+          "type": "KIT MOTOR",
+          "sleeve_size": "234.12 / 130.95",
+          "part_numbers": ["3919564", "3919247"],
+          "compression_chamber": "67 mm"
+        }
+      ]
+    },
+    {
+      "model": "P 2003",
+      "variants": [
+        {
+          "code": "K 9048 / K 21500",
+          "type": "KIT MOTOR",
+          "sleeve_size": "237.12 / 132.95",
+          "part_number": "3919564"
+        },
+        {
+          "code": "K 2003 / K 21510",
+          "type": "KIT MOTOR",
+          "sleeve_size": "237.12 / 130.95",
+          "part_number": "3919564",
+          "compression_chamber": "64 mm"
+        },
+        {
+          "code": "K 9100 / K 21515",
+          "type": "KIT MOTOR",
+          "sleeve_size": "234.12 / 130.95",
+          "part_number": "3919564"
+        }
+      ]
+    },
+    {
+      "model": "P 2004",
+      "variants": [
+        {
+          "code": "K 9069 / K 21650",
+          "type": "KIT MOTOR",
+          "sleeve_size": "237.12 / 132.95",
+          "part_number": "3919565"
+        },
+        {
+          "code": "K 2004 / K 21610",
+          "type": "KIT MOTOR",
+          "sleeve_size": "237.12 / 130.95",
+          "part_number": "3919565"
+        }
+      ]
+    },
+    {
+      "model": "P 2005",
+      "variants": [
+        {
+          "code": "K 2005 / K 21750",
+          "type": "KIT MOTOR CPL",
+          "part_number": "3919566"
+        }
+      ]
+    },
+    {
+      "model": "P 2006",
+      "variants": [
+        {
+          "code": "K 9070 / K 21640",
+          "type": "KIT MOTOR",
+          "sleeve_size": "237.12 / 132.95",
+          "part_number": "3919567"
+        },
+        {
+          "code": "K 2006 / K 21620",
+          "type": "KIT MOTOR",
+          "sleeve_size": "237.12 / 130.95",
+          "part_number": "3919567"
+        }
+      ]
+    },
+    {
+      "model": "P 2188",
+      "variants": [
+        {
+          "code": "K 2188 / K 21450",
+          "type": "KIT MOTOR",
+          "sleeve_size": "237.12 / 130.95",
+          "part_number": "3923163"
+        }
+      ]
+    },
+    {
+      "model": "P 2189",
+      "variants": [
+        {
+          "code": "K 2189 / K 21460",
+          "type": "KIT MOTOR",
+          "sleeve_size": "237.12 / 130.95",
+          "part_number": "3923164"
+        }
+      ]
+    },
+    {
+      "model": "P 2308",
+      "variants": [
+        {
+          "code": "K 2308 / K 21760",
+          "type": "KIT MOTOR",
+          "sleeve_size": "237.12 / 130.95",
+          "part_number": "3929161"
+        }
+      ]
+    },
+    {
+      "model": "P 9104",
+      "variants": [
+        {
+          "code": "K 9104 / K 21850",
+          "type": "KIT MOTOR",
+          "sleeve_size": "237.12 / 130.95",
+          "part_number": "3917707"
+        }
+      ]
+    },
+    {
+      "model": "P 9106 / P 9166",
+      "variants": [
+        {
+          "code": "K 9106 / K 9166 / K 21860",
+          "type": "KIT MOTOR",
+          "sleeve_size": "234.12 / 130.95",
+          "part_number": "3917707",
+          "compression_chamber": "56 mm"
+        }
+      ]
+    }
+  ],
+  "components": {
+    "rings": [
+      {
+        "code": "DC 7189 / A21500",
+        "description": "ANEL 91 - 1 CIL"
+      },
+      {
+        "code": "DC 7192 / A21510",
+        "description": "ANEL 91 - 1 CIL"
+      }
+    ],
+    "sleeves": [
+      {
+        "code": "C 21510",
+        "description": "CAMISA MOTOR",
+        "size": "237.12 / 130.95"
+      },
+      {
+        "code": "C 21900",
+        "description": "CAMISA MOTOR",
+        "size": "234.12 / 130.95"
+      },
+      {
+        "code": "C 21500",
+        "description": "CAMISA MOTOR",
+        "size": "237.12 / 132.95"
+      }
+    ],
+    "bearings": [
+      {
+        "code": "B 21425",
+        "description": "BRONZINA BIELA"
+      },
+      {
+        "code": "M 21504",
+        "description": "BRONZINA MANCAL"
+      }
+    ],
+    "bushings": [
+      {
+        "code": "G 21880",
+        "description": "BUCHA BIELA"
+      },
+      {
+        "code": "H 21094",
+        "description": "BUCHA COMANDO"
+      }
+    ],
+    "tappets": [
+      {
+        "code": "T 21135",
+        "description": "TUCHO MOTOR FERRO"
+      },
+      {
+        "code": "T 21216",
+        "description": "TUCHO MOTOR AÇO"
+      }
+    ],
+    "valves": [
+      {
+        "code": "VA 0210153",
+        "description": "VALVULA ADMISSAO"
+      },
+      {
+        "code": "VE 0210152",
+        "description": "VALVULA ESCAPE"
+      }
+    ],
+    "guides_and_seats": [
+      {
+        "code": "GC 0210023",
+        "description": "GUIA ADMISSAO E ESCAPE"
+      },
+      {
+        "code": "SA 0210071",
+        "description": "SEDE ADMISSAO 30°"
+      },
+      {
+        "code": "SE 0210072",
+        "description": "SEDE ESCAPE 45°"
+      }
+    ],
+    "pumps": [
+      {
+        "code": "10133",
+        "description": "BOMBA OLEO"
+      },
+      {
+        "code": "UB 732",
+        "description": "BOMBA AGUA"
+      }
+    ],
+    "thermostat": [
+      {
+        "code": "VT 302.82",
+        "description": "VALVULA TERMOSTATICA"
+      }
+    ],
+    "gasket_sets": [
+      {
+        "code": "80958",
+        "description": "JG. JUNTA COMPL. C/RET. DT / TS. COM PISTA S/ ANEIS CAMISA E HASTE"
+      },
+      {
+        "code": "80957",
+        "description": "JG. JUNTA COMPL. S/RET. E S/ ANEIS CAMISA"
+      },
+      {
+        "code": "79958",
+        "description": "JG. JUNTA SUPERIOR C/ RETENTORES E HASTE DE VALVULAS"
+      },
+      {
+        "code": "79957",
+        "description": "JG. JUNTA SUPERIOR S/ RETENTOR"
+      },
+      {
+        "code": "82283",
+        "description": "JUNTA CABEÇOTE"
+      },
+      {
+        "code": "75058",
+        "description": "JUNTA TAMPA VALVULAS"
+      },
+      {
+        "code": "96029",
+        "description": "JUNTA CARTER"
+      }
+    ],
+    "seals": [
+      {
+        "code": "75064",
+        "description": "ANEIS DE CAMISA - JOGO"
+      },
+      {
+        "code": "05536 GRAGH",
+        "description": "RETENTOR POLIA ( SEM PISTA )"
+      },
+      {
+        "code": "05287 GRGH",
+        "description": "RETENTOR MANCAL TRAZEIRO"
+      },
+      {
+        "code": "05604 KIT",
+        "description": "KIT RET. POLIA + PISTA + DISPOSITIVO DE MONTAGEM"
+      }
+    ],
+    "valve_trains": [
+      {
+        "code": "09285 BREF",
+        "description": "HASTE VALVULAS C/ CARCAÇA"
+      },
+      {
+        "code": "CO 581",
+        "description": "COMANDO DE VALVULAS AÇO"
+      }
+    ],
+    "crankshaft": [
+      {
+        "code": "VB 282",
+        "description": "VIRABREQUIM"
+      }
+    ],
+    "connecting_rods": [
+      {
+        "code": "BL 21850",
+        "description": "BIELA MOTOR"
+      }
+    ],
+    "bearings_rolling": [
+      {
+        "code": "6206 2RSR",
+        "description": "ROLAMENTO VIRABREQUIM"
+      }
+    ],
+    "filters": [
+      {
+        "code": "0986B01009",
+        "description": "FILTRO LUBRIFICANTE ...92"
+      },
+      {
+        "code": "0986B01011",
+        "description": "FILTRO LUBRIFICANTE 92..."
+      },
+      {
+        "code": "0986450713",
+        "description": "FILTRO COMBUSTÍVEL C/ DRENO"
+      },
+      {
+        "code": "0986450582",
+        "description": "FILTRO D'AGUA"
+      }
+    ]
+  },
+  "copyright": "Copyright © Nilson Primo ® - Todos Direitos Reservados 2013"
+}
