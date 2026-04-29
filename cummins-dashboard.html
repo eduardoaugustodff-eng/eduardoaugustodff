@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Cummins Series B - Nune Diesel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #001a4d;
+            --secondary-blue: #003d99;
+            --accent-blue: #0052cc;
+            --light-blue: #e6f0ff;
+            --gray-dark: #333;
+            --gray-light: #f8f9fa;
+            --white: #ffffff;
+            --text-dark: #1a1a1a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #001a4d 0%, #003d99 100%);
+            color: var(--text-dark);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 26, 77, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-placeholder {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 14px;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .logo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .header-title {
+            flex: 1;
+        }
+
+        .header-title h1 {
+            color: var(--primary-blue);
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .header-title p {
+            color: var(--accent-blue);
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .header-badge {
+            background: var(--light-blue);
+            color: var(--accent-blue);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 26, 77, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 26, 77, 0.15);
+        }
+
+        .card-title {
+            color: var(--primary-blue);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-icon {
+            width: 30px;
+            height: 30px;
+            background: var(--light-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        /* Especificações Técnicas */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .spec-item {
+            background: var(--light-blue);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .spec-label {
+            color: var(--secondary-blue);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .spec-value {
+            color: var(--primary-blue);
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        /* Tabela de Comparação */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .comparison-table th {
+            background: var(--light-blue);
+            color: var(--primary-blue);
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            border: 1px solid #d0d0d0;
+        }
+
+        .comparison-table td {
+            padding: 12px;
+            border: 1px solid #e0e0e0;
+            color: var(--text-dark);
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: var(--gray-light);
+        }
+
+        .comparison-table tr:hover {
+            background: var(--light-blue);
+        }
+
+        /* Aplicações */
+        .applications-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .app-item {
+            background: var(--light-blue);
+            padding: 12px;
+            border-radius: 8px;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .app-item::before {
+            content: "✓";
+            color: var(--accent-blue);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* Benefícios */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            background: var(--light-blue);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-blue);
+            color: var(--white);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .benefit-text h3 {
+            color: var(--primary-blue);
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+
+        .benefit-text p {
+            color: var(--secondary-blue);
+            font-size: 12px;
+        }
+
+        /* Full Width Section */
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            color: var(--secondary-blue);
+            box-shadow: 0 4px 15px rgba(0, 26, 77, 0.1);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .applications-list {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-title h1 {
+                font-size: 24px;
+            }
+
+            .header-badge {
+                align-self: center;
+            }
+
+            .comparison-table {
+                font-size: 12px;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px;
+            }
+        }
+
+        /* Animações */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        /* Badge de Destaque */
+        .highlight-badge {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        /* Abas de Peças */
+        .parts-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 12px 20px;
+            color: var(--secondary-blue);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tab-btn:hover {
+            color: var(--accent-blue);
+            border-bottom-color: var(--accent-blue);
+        }
+
+        .tab-btn.active {
+            color: var(--accent-blue);
+            border-bottom-color: var(--accent-blue);
+        }
+
+        /* Status Badges */
+        .status-badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .status-badge.success {
+            background: #d4f4dd;
+            color: #1b6b3d;
+        }
+
+        .status-badge.warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-badge.pending {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        /* Tabela de Peças */
+        .parts-table {
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header com Logo -->
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-placeholder">
+                    <!-- SUBSTITUA ESTE DIV PELA SUA LOGO -->
+                    <img id="company-logo" src="" alt="Nune Diesel Logo" style="display: none;">
+                    <span id="logo-text">NUNE<br>DIESEL</span>
+                </div>
+                <div class="header-title">
+                    <h1>Cummins Series B</h1>
+                    <p>4BT • 4BTA • B3.9T - 4 Cilindros</p>
+                </div>
+            </div>
+            <div class="header-badge">Motor de Combustão Interna</div>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="main-content">
+            <!-- Card: Especificações Técnicas -->
+            <div class="card">
+                <h2 class="card-title">
+                    <span class="card-icon">⚙️</span>
+                    Especificações Técnicas
+                </h2>
+                <div class="specs-grid">
+                    <div class="spec-item">
+                        <div class="spec-label">Cilindrada</div>
+                        <div class="spec-value">3.9 L</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Número de Cilindros</div>
+                        <div class="spec-value">4</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Potência Máxima</div>
+                        <div class="spec-value">105-125 HP</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Torque Máximo</div>
+                        <div class="spec-value">265-290 N·m</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Tipo de Combustível</div>
+                        <div class="spec-value">Diesel</div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Tipo de Injeção</div>
+                        <div class="spec-value">Injeção Direta</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Modelos Disponíveis -->
+            <div class="card">
+                <h2 class="card-title">
+                    <span class="card-icon">📋</span>
+                    Modelos Disponíveis
+                </h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Modelo</th>
+                            <th>Potência</th>
+                            <th>Torque</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>4BT</strong></td>
+                            <td>105 HP</td>
+                            <td>265 N·m</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4BTA</strong></td>
+                            <td>115 HP</td>
+                            <td>275 N·m</td>
+                        </tr>
+                        <tr>
+                            <td><strong>B3.9T</strong></td>
+                            <td>125 HP</td>
+                            <td>290 N·m</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Card: Aplicações -->
+            <div class="card">
+                <h2 class="card-title">
+                    <span class="card-icon">🚚</span>
+                    Aplicações Principais
+                </h2>
+                <div class="applications-list">
+                    <div class="app-item">Caminhões Leves</div>
+                    <div class="app-item">Ônibus</div>
+                    <div class="app-item">Maquinário Industrial</div>
+                    <div class="app-item">Geradores</div>
+                    <div class="app-item">Bombas Hidráulicas</div>
+                    <div class="app-item">Aplicações Marinhas</div>
+                </div>
+            </div>
+
+            <!-- Card: Benefícios -->
+            <div class="card">
+                <h2 class="card-title">
+                    <span class="card-icon">⭐</span>
+                    Principais Benefícios
+                </h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🔧</div>
+                        <div class="benefit-text">
+                            <h3>Confiabilidade Comprovada</h3>
+                            <p>Tecnologia Cummins de renome mundial</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">💰</div>
+                        <div class="benefit-text">
+                            <h3>Eficiência Econômica</h3>
+                            <p>Baixo consumo de combustível e manutenção</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🌱</div>
+                        <div class="benefit-text">
+                            <h3>Emissões Controladas</h3>
+                            <p>Atende padrões ambientais atuais</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🛠️</div>
+                        <div class="benefit-text">
+                            <h3>Fácil Manutenção</h3>
+                            <p>Peças disponíveis e suporte técnico garantido</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card: Especificações Avançadas (Full Width) -->
+            <div class="card full-width">
+                <h2 class="card-title">
+                    <span class="card-icon">📊</span>
+                    Especificações Avançadas
+                </h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>4BT</th>
+                            <th>4BTA</th>
+                            <th>B3.9T</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Rotação Máxima</strong></td>
+                            <td>2.600 RPM</td>
+                            <td>2.600 RPM</td>
+                            <td>2.600 RPM</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sistema de Arrefecimento</strong></td>
+                            <td>Líquido</td>
+                            <td>Líquido</td>
+                            <td>Líquido</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tipos de Filtro</strong></td>
+                            <td>Diesel / Ar</td>
+                            <td>Diesel / Ar</td>
+                            <td>Diesel / Ar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Partida</strong></td>
+                            <td>Elétrica 24V</td>
+                            <td>Elétrica 24V</td>
+                            <td>Elétrica 24V</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Peso Aproximado</strong></td>
+                            <td>450 kg</td>
+                            <td>455 kg</td>
+                            <td>460 kg</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Card: Catálogo de Peças - Pistões e Anéis (Full Width) -->
+            <div class="card full-width">
+                <h2 class="card-title">
+                    <span class="card-icon">🔩</span>
+                    Catálogo de Peças - Pistões e Anéis
+                </h2>
+                <div class="parts-tabs">
+                    <button class="tab-btn active" onclick="filterParts('pistons')">Pistões com Anel</button>
+                    <button class="tab-btn" onclick="filterParts('rings')">Anéis</button>
+                </div>
+                <table class="comparison-table parts-table" id="pistons">
+                    <thead>
+                        <tr>
+                            <th>Código da Peça</th>
+                            <th>Descrição</th>
+                            <th>Código OEM</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>PA 1819 / S 21100</strong></td>
+                            <td>Pistão com Anel</td>
+                            <td>3907163</td>
+                            <td><span class="status-badge success">Disponível</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>PA 2102 / S 21550</strong></td>
+                            <td>Pistão com Anel</td>
+                            <td>3921880</td>
+                            <td><span class="status-badge success">Disponível</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>PA 9075 / S 21190</strong></td>
+                            <td>Pistão com Anel</td>
+                            <td>3919041</td>
+                            <td><span class="status-badge success">Disponível</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>PA 9092 / S 21260</strong></td>
+                            <td>Pistão com Anel</td>
+                            <td>3926632</td>
+                            <td><span class="status-badge warning">Ver Adaptações</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>PA 2304 / S 21380</strong></td>
+                            <td>Pistão com Anel</td>
+                            <td>3928673</td>
+                            <td><span class="status-badge success">Disponível</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>PA 2306 / S 21600</strong></td>
+                            <td>Pistão com Anel</td>
+                            <td>3921884</td>
+                            <td><span class="status-badge success">Disponível</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="comparison-table parts-table" id="rings" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Código da Peça</th>
+                            <th>Descrição</th>
+                            <th>Cilindros</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>DC 7188 / A 21110</strong></td>
+                            <td>Anel Aspirado</td>
+                            <td>1 CIL</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DC 7187 / A 21100</strong></td>
+                            <td>Anel Turbo</td>
+                            <td>1 CIL</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Card: Catálogo de Peças - Componentes Internos (Full Width) -->
+            <div class="card full-width">
+                <h2 class="card-title">
+                    <span class="card-icon">⚙️</span>
+                    Catálogo de Peças - Componentes Internos
+                </h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descrição</th>
+                            <th>Aplicação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>C 21100</strong></td>
+                            <td>Camisa Motor</td>
+                            <td>Motor 4BT/4BTA/B3.9T</td>
+                        </tr>
+                        <tr>
+                            <td><strong>B 21424</strong></td>
+                            <td>Bronzina Biela</td>
+                            <td>Biela Interliça</td>
+                        </tr>
+                        <tr>
+                            <td><strong>B 21466</strong></td>
+                            <td>Bronzina Biela</td>
+                            <td>Biela Fraturada</td>
+                        </tr>
+                        <tr>
+                            <td><strong>M 21502</strong></td>
+                            <td>Bronzina Mancal</td>
+                            <td>Mancal Principal</td>
+                        </tr>
+                        <tr>
+                            <td><strong>G 21051</strong></td>
+                            <td>Bucha Biela</td>
+                            <td>Acoplamento Biela</td>
+                        </tr>
+                        <tr>
+                            <td><strong>H 21450</strong></td>
+                            <td>Bucha Comando</td>
+                            <td>Comando de Válvulas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>T 21135</strong></td>
+                            <td>Tucho Motor Ferro</td>
+                            <td>Comando de Ferro</td>
+                        </tr>
+                        <tr>
+                            <td><strong>T 21216</strong></td>
+                            <td>Tucho Motor Aço</td>
+                            <td>Comando de Aço</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Card: Catálogo de Peças - Válvulas e Guias (Full Width) -->
+            <div class="card full-width">
+                <h2 class="card-title">
+                    <span class="card-icon">🔼</span>
+                    Catálogo de Peças - Válvulas e Guias
+                </h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descrição</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>VA 0210151</strong></td>
+                            <td>Válvula Admissão</td>
+                            <td>Entrada de Ar</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VE 0210150</strong></td>
+                            <td>Válvula Escape</td>
+                            <td>Saída de Gases</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GC 0210054</strong></td>
+                            <td>Guia Adm/Esc</td>
+                            <td>Parede Fina</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SA 0210108</strong></td>
+                            <td>Sede Admissão</td>
+                            <td>Assento Válvula Admissão</td>
+                        </tr>
+                        <tr>
+                            <td><strong>SE 0210107</strong></td>
+                            <td>Sede Escape</td>
+                            <td>Assento Válvula Escape</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Card: Catálogo de Peças - Juntas e Retentor (Full Width) -->
+            <div class="card full-width">
+                <h2 class="card-title">
+                    <span class="card-icon">🔐</span>
+                    Catálogo de Peças - Juntas e Retentores
+                </h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descrição</th>
+                            <th>Observações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>79954</strong></td>
+                            <td>Junta Superior Motor</td>
+                            <td>Com Retentor e Haste de Válvulas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>80955</strong></td>
+                            <td>Junta Motor Completo</td>
+                            <td>Sem Retentor</td>
+                        </tr>
+                        <tr>
+                            <td><strong>80954</strong></td>
+                            <td>Junta Motor Completo</td>
+                            <td>Com Retentores, Sem Anéis de Camisa, Com Haste Válvulas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>82284</strong></td>
+                            <td>Junta Cabeçote</td>
+                            <td>Vedação do Cabeçote</td>
+                        </tr>
+                        <tr>
+                            <td><strong>05603 KIT</strong></td>
+                            <td>Kit Retentor Polia</td>
+                            <td>Com Pista + Dispositivo Montagem</td>
+                        </tr>
+                        <tr>
+                            <td><strong>05287 KIT</strong></td>
+                            <td>Kit Retentor Traseiro</td>
+                            <td>Traseira do Motor</td>
+                        </tr>
+                        <tr>
+                            <td><strong>05287 GRGH</strong></td>
+                            <td>Retentor Traseiro</td>
+                            <td>Unitário</td>
+                        </tr>
+                        <tr>
+                            <td><strong>09286 NOF</strong></td>
+                            <td>Retentor Haste Válvulas</td>
+                            <td>Sem Carcaça</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Card: Catálogo de Peças - Sistemas Complementares (Full Width) -->
+            <div class="card full-width">
+                <h2 class="card-title">
+                    <span class="card-icon">💧</span>
+                    Catálogo de Peças - Sistemas Complementares
+                </h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descrição</th>
+                            <th>Função</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>UB 731</strong></td>
+                            <td>Bomba Água</td>
+                            <td>Arrefecimento do Motor</td>
+                        </tr>
+                        <tr>
+                            <td><strong>10167</strong></td>
+                            <td>Bomba Óleo</td>
+                            <td>Lubrificação do Motor</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VT 342.83</strong></td>
+                            <td>Válvula Termostática</td>
+                            <td>Controle de Temperatura</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CO 611</strong></td>
+                            <td>Comando Válvulas Aço</td>
+                            <td>Acionamento de Válvulas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6206 2RSR</strong></td>
+                            <td>Rolamento Virabrequim</td>
+                            <td>Suporte do Virabrequim</td>
+                        </tr>
+                        <tr>
+                            <td><strong>VB 220</strong></td>
+                            <td>Virabrequim</td>
+                            <td>Eixo Principal do Motor</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Card: Catálogo de Peças - Filtros (Full Width) -->
+            <div class="card full-width">
+                <h2 class="card-title">
+                    <span class="card-icon">🔽</span>
+                    Catálogo de Peças - Filtros
+                </h2>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descrição</th>
+                            <th>Observações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>0986B01010</strong></td>
+                            <td>Filtro Óleo</td>
+                            <td>Filtração do Sistema de Lubrificação</td>
+                        </tr>
+                        <tr>
+                            <td><strong>0986450728</strong></td>
+                            <td>Filtro Combustível</td>
+                            <td>Padrão</td>
+                        </tr>
+                        <tr>
+                            <td><strong>0986450732</strong></td>
+                            <td>Filtro Combustível</td>
+                            <td>Opcional</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-links">
+                <a href="#">Sobre Nós</a>
+                <a href="#">Suporte Técnico</a>
+                <a href="#">Contato</a>
+                <a href="#">Peças de Reposição</a>
+            </div>
+            <p>&copy; 2024 Nune Diesel - Especialistas em Motores Cummins. Todos os direitos reservados.</p>
+        </div>
+    </div>
+
+    <script>
+        // Função para carregar logo personalizada
+        function carregarLogo(urlDaLogo) {
+            const logoImg = document.getElementById('company-logo');
+            const logoText = document.getElementById('logo-text');
+
+            if (urlDaLogo) {
+                logoImg.src = urlDaLogo;
+                logoImg.style.display = 'block';
+                logoText.style.display = 'none';
+            }
+        }
+
+        // Função para filtrar tabelas de peças
+        function filterParts(partType) {
+            // Ocultar todas as tabelas
+            const tables = document.querySelectorAll('.parts-table');
+            tables.forEach(table => {
+                table.style.display = 'none';
+            });
+
+            // Remover classe active de todos os botões
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Mostrar tabela selecionada
+            const selectedTable = document.getElementById(partType);
+            if (selectedTable) {
+                selectedTable.style.display = 'table';
+            }
+
+            // Adicionar classe active ao botão clicado
+            event.target.classList.add('active');
+        }
+
+        // Exemplo de uso (descomente e passe a URL da logo):
+        // carregarLogo('caminho/para/logo-nune-diesel.png');
+    </script>
+</body>
+</html>
