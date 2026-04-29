@@ -7,180 +7,203 @@
         <meta name="theme-color" content="#001f3f" />
         <title>Catálogo Motor Cummins 6BT - Série B</title>
       <style>
-                * {
-                              margin: 0;
-                              padding: 0;
-                              box-sizing: border-box;
-                }
-                body {
-                              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                              background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                              color: #333;
-                              min-height: 100vh;
-                              padding: 20px;
-                }
-                .container {
-                              max-width: 1200px;
-                              margin: 0 auto;
-                }
-                header {
-                              text-align: center;
-                              color: white;
-                              margin-bottom: 40px;
-                              background: rgba(0, 0, 0, 0.3);
-                              padding: 30px;
-                              border-radius: 10px;
-                }
-                header h1 {
-                              font-size: 2.5em;
-                              margin-bottom: 10px;
-                }
-                header p {
-                              font-size: 1.2em;
-                              opacity: 0.9;
-                }
-                .info-box {
-                              background: white;
-                              padding: 20px;
-                              border-radius: 10px;
-                              margin-bottom: 30px;
-                              box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-                }
-                .specs-grid {
-                              display: grid;
-                              grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-                              gap: 20px;
-                              margin-bottom: 30px;
-                }
-                .spec-card {
-                              background: white;
-                              padding: 20px;
-                              border-radius: 10px;
-                              box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-                              border-left: 5px solid #667eea;
-                }
-                .spec-card h3 {
-                              color: #667eea;
-                              margin-bottom: 10px;
-                }
-                .spec-card p {
-                              line-height: 1.6;
-                              color: #555;
-                }
-                .components {
-                              background: white;
-                              padding: 30px;
-                              border-radius: 10px;
-                              box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-                }
-                .components h2 {
-                              color: #667eea;
-                              margin-bottom: 20px;
-                              border-bottom: 3px solid #667eea;
-                              padding-bottom: 10px;
-                }
-                .component-list {
-                              display: grid;
-                              grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                              gap: 15px;
-                }
-                .component-item {
-                              background: #f8f9fa;
-                              padding: 15px;
-                              border-radius: 8px;
-                              border: 1px solid #ddd;
-                              transition: all 0.3s ease;
-                }
-                .component-item:hover {
-                              background: #667eea;
-                              color: white;
-                              border-color: #667eea;
-                              transform: translateY(-5px);
-                }
-                footer {
-                              text-align: center;
-                              color: white;
-                              margin-top: 40px;
-                              padding: 20px;
-                }
+                * { margin: 0; padding: 0; box-sizing: border-box; }
+                body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #333; min-height: 100vh; padding: 20px; }
+                .container { max-width: 1200px; margin: 0 auto; }
+                header { text-align: center; color: white; margin-bottom: 30px; background: rgba(0, 0, 0, 0.3); padding: 30px; border-radius: 10px; }
+                header h1 { font-size: 2.5em; margin-bottom: 10px; }
+                header p { font-size: 1.2em; opacity: 0.9; }
+                .search-box { background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
+                .search-box input { width: 100%; padding: 12px; font-size: 1em; border: 2px solid #667eea; border-radius: 8px; }
+                .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; background: white; padding: 15px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); }
+                .tab-btn { padding: 10px 20px; background: #f0f0f0; border: 2px solid #ddd; border-radius: 8px; cursor: pointer; font-weight: bold; transition: all 0.3s; }
+                .tab-btn.active { background: #667eea; color: white; border-color: #667eea; }
+                .tab-btn:hover { transform: translateY(-2px); }
+                .table-container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); overflow-x: auto; }
+                table { width: 100%; border-collapse: collapse; }
+                th { background: #667eea; color: white; padding: 15px; text-align: left; font-weight: bold; }
+                td { padding: 12px 15px; border-bottom: 1px solid #eee; }
+                tr:hover { background: #f5f5f5; }
+                .no-data { text-align: center; padding: 30px; color: #999; }
+                footer { text-align: center; color: white; margin-top: 30px; padding: 20px; }
+                .stats { background: rgba(255,255,255,0.1); color: white; padding: 15px; border-radius: 10px; margin-bottom: 20px; text-align: center; }
             </style>
   </head>
   <body>
         <div class="container">
                   <header>
                                 <h1>📘 Catálogo Motor Cummins 6BT</h1>
-                              <p>Série B - Especificações e Peças</p>
+                              <p>Série B - Especificações e Peças (50+ componentes)</p>
                   </header>
         
-                <div class="info-box">
-                            <h2>Informações Gerais</h2>
-                            <p>O motor Cummins 6BT (Série B) é um motor diesel de alto desempenho amplamente utilizado em caminhões, ônibus e aplicações industriais. Este catálogo reúne informações detalhadas sobre especificações e componentes disponíveis.</p>
+                <div class="search-box">
+                            <input type="text" id="searchInput" placeholder="🔍 Buscar por código, descrição ou referência..." />
                 </div>div>
         
-                <div class="specs-grid">
-                            <div class="spec-card">
-                                            <h3>📏 Deslocamento</h3>
-                                            <p>5.9 L (360 ci)</p>
-                            </div>div>
-                            <div class="spec-card">
-                                            <h3>⚡ Potência</h3>
-                                            <p>160-220 HP (119-164 kW)</p>
-                            </div>div>
-                            <div class="spec-card">
-                                            <h3>🔧 Torque</h3>
-                                            <p>520-600 Nm (390-450 lb-ft)</p>
-                            </div>div>
-                            <div class="spec-card">
-                                            <h3>🔩 Cilindros</h3>
-                                            <p>6 cilindros em linha</p>
-                            </div>div>
-                            <div class="spec-card">
-                                            <h3>📊 Taxa de Compressão</h3>
-                                            <p>16.3:1</p>
-                            </div>div>
-                            <div class="spec-card">
-                                            <h3>⛽ Tipo de Combustível</h3>
-                                            <p>Diesel</p>
-                            </div>div>
+                <div class="stats">
+                            <p>Total de peças: <strong id="totalParts">0</strong>strong> | Exibindo: <strong id="displayParts">0</strong>strong></p>
                 </div>div>
         
-                <div class="components">
-                            <h2>Componentes e Peças Disponíveis</h2>
-                            <div class="component-list">
-                                            <div class="component-item">🔴 Blocos de Motor</div>div>
-                                            <div class="component-item">🔴 Anéis de Êmbolo</div>div>
-                                            <div class="component-item">📦 Camisas de Cilindro</div>div>
-                                            <div class="component-item">⚙️ Bronzinas</div>div>
-                                            <div class="component-item">⚙️ Buchas</div>div>
-                                            <div class="component-item">⚙️ Tuchos</div>div>
-                                            <div class="component-item">📦 Válvulas de Admissão</div>div>
-                                            <div class="component-item">📦 Válvulas de Escape</div>div>
-                                            <div class="component-item">📦 Guias de Válvulas</div>div>
-                                            <div class="component-item">📦 Sedes de Válvulas</div>div>
-                                            <div class="component-item">📦 Juntas de Motor</div>div>
-                                            <div class="component-item">📦 Selos e Retenes</div>div>
-                                            <div class="component-item">⚙️ Bombas de Óleo</div>div>
-                                            <div class="component-item">⚙️ Bombas de Água</div>div>
-                                            <div class="component-item">🔩 Rolamentos</div>div>
-                                            <div class="component-item">🔧 Filtros de Óleo</div>div>
-                                            <div class="component-item">🔧 Filtros de Combustível</div>div>
-                                            <div class="component-item">🔧 Filtros de Ar</div>div>
-                                            <div class="component-item">⚡ Sistema Elétrico</div>div>
-                                            <div class="component-item">🔌 Alternadores</div>div>
-                                            <div class="component-item">🔌 Motores de Partida</div>div>
-                                            <div class="component-item">💨 Turbocompressores</div>div>
-                                            <div class="component-item">💨 Intercoolers</div>div>
-                            </div>div>
+                <div class="tabs" id="categoryTabs"></div>div>
+        
+                <div class="table-container">
+                            <table>
+                                              <thead>
+                                                                    <tr>
+                                                                                              <th>Código</th>
+                                                                      <th>Referência</th>
+                                                                      <th>Descrição</th>
+                                                                      <th>Número da Peça</th>
+                                                                      <th>Observação</th>
+                                                                    </tr>
+                                              </thead>
+                                            <tbody id="partsTable">
+                                                <tr><td colspan="5" class="no-data">Carregando dados...</td>td></tr>
+                                            </tbody>tbody>
+                            </table>
                 </div>div>
         
                 <footer>
-                              <p>&copy; 2024 AUTO PEÇAS NUNEDIESEL - Motor Cummins Série B (6BT)</p>p>
-                              <p>Todos os Direitos Reservados</p>p>
+                              <p>&copy; 2024 AUTO PEÇAS NUNEDIESEL - Motor Cummins Série B (6BT)</p>
+                            <p>Todos os Direitos Reservados</p>
                 </footer>
         </div>div>
+  
+      <script>
+                let allParts = {};
+                let currentCategory = 'all';
+                let searchTerm = '';
+
+                async function loadData() {
+                              try {
+                                                const response = await fetch('./cummins-specs-6bt.json');
+                                                const data = await response.json();
+
+                                                // Organizando os dados
+                                                allParts = {
+                                                                      pistoes: data.pistoes || [],
+                                                                      aneis: data.aneis || [],
+                                                                      camisas: data.camisas || [],
+                                                                      bronzinas: data.bronzinas || [],
+                                                                      mancais: data.mancais || [],
+                                                                      buchas: data.buchas || [],
+                                                                      tuchos: data.tuchos || [],
+                                                                      valvulas: data.valvulas || [],
+                                                                      guias_sedes: data.guias_sedes || [],
+                                                                      juntas: data.juntas || [],
+                                                                      retentores: data.retentores || [],
+                                                                      bombas: data.bombas || [],
+                                                                      valvulas_termostaticas: data.valvulas_termostaticas || [],
+                                                                      comando_valvulas: data.comando_valvulas || [],
+                                                                      virabrequim: data.virabrequim || [],
+                                                                      rolamentos: data.rolamentos || [],
+                                                                      filtros: data.filtros || []
+                                                };
+
+                                                renderTabs();
+                                                renderTable();
+                                                updateStats();
+                              } catch (error) {
+                                                document.querySelector('#partsTable').innerHTML = '<tr><td colspan="5" class="no-data">⚠️ Erro ao carregar dados</td></tr>';
+                              }
+                }
+
+                function renderTabs() {
+                              const tabsDiv = document.getElementById('categoryTabs');
+                              tabsDiv.innerHTML = '<button class="tab-btn active" onclick="filterCategory(\'all\')">📋 Todas</button>';
+
+                              Object.keys(allParts).forEach(category => {
+                                                const name = category.replace(/_/g, ' ').toUpperCase();
+                                                tabsDiv.innerHTML += `<button class="tab-btn" onclick="filterCategory('${category}')">${name}</button>`;
+                              });
+                }
+
+                function filterCategory(category) {
+                              currentCategory = category;
+                              document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                              event.target.classList.add('active');
+                              renderTable();
+                              updateStats();
+                }
+
+                function renderTable() {
+                              const tbody = document.getElementById('partsTable');
+                              let rows = '';
+
+                              if (currentCategory === 'all') {
+                                                Object.values(allParts).forEach(parts => {
+                                                                      parts.forEach(part => {
+                                                                                                if (matchesSearch(part)) {
+                                                                                                                              rows += createRow(part);
+                                                                                                  }
+                                                                      });
+                                                });
+                              } else {
+                                                allParts[currentCategory].forEach(part => {
+                                                                      if (matchesSearch(part)) {
+                                                                                                rows += createRow(part);
+                                                                      }
+                                                });
+                              }
+
+                              tbody.innerHTML = rows || '<tr><td colspan="5" class="no-data">Nenhuma peça encontrada</td></tr>';
+                }
+
+                function createRow(part) {
+                              return `
+                                              <tr>
+                                                                  <td><strong>${part.codigo || '-'}</strong></td>
+                                                                                      <td>${part.referencia || '-'}</td>
+                                                                                                          <td>${part.descricao || '-'}</td>
+                                                                                                                              <td>${part.numero_parte || '-'}</td>
+                                                                                                                                                  <td>${part.observacao || '-'}</td>
+                                                                                                                                                                  </tr>
+                                                                                                                                                                              `;
+                }
+
+                function matchesSearch(part) {
+                              const term = searchTerm.toLowerCase();
+                              return !term || 
+                                                   part.codigo?.toLowerCase().includes(term) ||
+                                                   part.referencia?.toLowerCase().includes(term) ||
+                                                   part.descricao?.toLowerCase().includes(term) ||
+                                                   part.numero_parte?.toLowerCase().includes(term);
+                }
+
+                function updateStats() {
+                              let totalCount = 0;
+                              let displayCount = 0;
+
+                              Object.values(allParts).forEach(parts => {
+                                                totalCount += parts.length;
+                                                if (currentCategory === 'all') {
+                                                                      displayCount += parts.filter(p => matchesSearch(p)).length;
+                                                }
+                              });
+
+                              if (currentCategory !== 'all') {
+                                                displayCount = allParts[currentCategory].filter(p => matchesSearch(p)).length;
+                              }
+
+                              document.getElementById('totalParts').textContent = totalCount;
+                              document.getElementById('displayParts').textContent = displayCount;
+                }
+
+                document.getElementById('searchInput').addEventListener('input', (e) => {
+                              searchTerm = e.target.value;
+                              renderTable();
+                              updateStats();
+                });
+
+                loadData();
+      </script>
   </body>
 </html>html>
-                </footer></p></p></h1>
+      </script></p></p>
+                </footer></tr></th></th>
+                                                                    </tr>
+                                              </thead>
+                            </table></p></p></h1>
                   </header>
   </body>
       </style></title>
